@@ -21,6 +21,7 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dense(81, activation='relu', input_shape=(81,)),
     tf.keras.layers.Dense(128, activation='relu'),
     tf.keras.layers.Dense(256, activation='relu'),
+    tf.keras.layers.Dense(256, activation='relu'),
     tf.keras.layers.Dense(128, activation='relu'),
     tf.keras.layers.Dense(81, activation='relu')
 ])
@@ -29,6 +30,6 @@ model.compile(optimizer='rmsprop',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 
-model.fit(X_train, y_train, epochs=5, batch_size=128)
+model.fit(X_train, y_train, epochs=10, batch_size=128)
 print()
 model.evaluate(X_test, y_test)
